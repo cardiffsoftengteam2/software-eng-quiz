@@ -3,13 +3,14 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class StatisticsProcessor {
 
     private String line;
-    private List<Statistics> stats = new ArrayList<Statistics>;
-    String fileName = "";
+    private List<Statistics> stats = new ArrayList<Statistics>();
+    private String fileName;
 
     public List<Statistics> processStats(String fName) {
         fileName = fName;
@@ -21,7 +22,7 @@ public class StatisticsProcessor {
                 String[] statsArray = line.split(",");
 
                 // create new weather object
-                Statistics statsOb = new Weather();
+                Statistics statsOb = new Statistics();
 
                 statsOb.setCorrect(Integer.parseInt(statsArray[0]));
                 statsOb.setIncorrect(Integer.parseInt(statsArray[1]));
@@ -30,8 +31,8 @@ public class StatisticsProcessor {
                 statsOb.setNumberAnswered(Integer.parseInt(statsArray[4]));
 
                 stats.add(statsOb);
-
-        } catch(IOException e) {
+            }
+        } catch (IOException e) {
             System.out.println("File NOT found");
             e.printStackTrace();
         }

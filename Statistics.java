@@ -6,7 +6,7 @@ public class Statistics {
     private String schoolName;
     private int questionsAnswered;
 
-    public Weather() {
+    public Statistics() {
         this.correct = 0;
         this.incorrect = 0;
         this.schoolYear = "";
@@ -14,7 +14,7 @@ public class Statistics {
         this.questionsAnswered = 0;
     }
 
-    public Weather(int correct, int incorrect, String year, String sName, int answered) {
+    public Statistics(int correct, int incorrect, String year, String sName, int answered) {
 
         this.correct = correct;
         this.incorrect = incorrect;
