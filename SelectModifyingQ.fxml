@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<TitledPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" text="Access Questions" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="settings.ModifySelQController">
+   <content>
+      <AnchorPane prefHeight="800.0" prefWidth="1200.0">
+         <children>
+            <Button layoutX="1089.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="88.0" text="Log Out" />
+            <Text layoutX="319.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please select the question you wish to modify:" textAlignment="CENTER" wrappingWidth="570.383129119873">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <TableView fx:id="tableView" layoutX="32.0" layoutY="101.0" prefHeight="546.0" prefWidth="1145.0">
+              <columns>
+                <TableColumn fx:id="categoryColumn" prefWidth="183.0" text="Category Name" />
+                  <TableColumn fx:id="questionColumn" prefWidth="157.0" text="Questions" />
+                  <TableColumn fx:id="letterLabelColumn" prefWidth="111.0" text="Correct Letter" />
+                  <TableColumn fx:id="letterALabelColumn" prefWidth="170.0" text="A." />
+                  <TableColumn fx:id="letterBLabelColumn" prefWidth="157.0" text="B." />
+                  <TableColumn fx:id="letterCLabelColumn" prefWidth="176.0" text="C." />
+                  <TableColumn fx:id="letterDLabelColumn" prefWidth="190.0" text="D." />
+              </columns>
+            </TableView>
+            <Button fx:id="deleteQuestionButton" layoutX="997.0" layoutY="681.0" mnemonicParsing="false" onAction="#deleteButtonPushed" prefHeight="39.0" prefWidth="166.0" text="Delete " />
+            <Button fx:id="HomePgButton" layoutX="16.0" layoutY="686.0" mnemonicParsing="false" onAction="#changeHomeSceneButtonPushed" prefHeight="39.0" prefWidth="154.0" text="Home Page" />
+         </children>
+      </AnchorPane>
+   </content>
+</TitledPane>
