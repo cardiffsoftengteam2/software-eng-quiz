@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="settings.FXMLMainViewController">
+   <children>
+      <Label layoutX="329.0" layoutY="292.0" text="Please select an option below:" textAlignment="CENTER">
+         <font>
+            <Font size="39.0" />
+         </font>
+      </Label>
+      <Button layoutX="1021.0" layoutY="14.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="163.0" text="Log Out" textAlignment="CENTER" />
+      <Button fx:id="createButton" layoutX="228.0" layoutY="433.0" mnemonicParsing="false" onAction="#changeCreateSceneButtonPushed" prefHeight="102.0" prefWidth="318.0" text="Create Questions" textAlignment="CENTER">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="modifyButton" layoutX="612.0" layoutY="433.0" mnemonicParsing="false" onAction="#changeModifySceneButtonPushed" prefHeight="102.0" prefWidth="319.0" text="Modify Questions" textAlignment="RIGHT">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <AnchorPane layoutX="479.0" layoutY="-30.0" prefHeight="200.0" prefWidth="540.0" />
+   </children>
+</AnchorPane>
