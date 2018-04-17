@@ -1,85 +1,92 @@
 package settings;
 
+
 import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.image.Image;
 
 public class Questions {
 	
-	private SimpleStringProperty categoryName, questionInput, letterLabel, letterALabel, letterBLabel, letterCLabel, letterDLabel;
+	private StringProperty categoryName = new SimpleStringProperty(this, "categoryName", "");
 	
-	
-	public Questions (String categoryName, String questionInput, String letterLabel, String letterALabel, String letterBLabel, String letterCLabel, String letterDLabel) {
-		this.categoryName = new SimpleStringProperty(categoryName);
-	
-		this.questionInput = new SimpleStringProperty(questionInput);
-	
-		this.letterLabel = new SimpleStringProperty(letterLabel);
-	
-		this.letterALabel = new SimpleStringProperty(letterALabel);
-
-		this.letterBLabel = new SimpleStringProperty(letterBLabel);
-	
-		this.letterCLabel = new SimpleStringProperty(letterCLabel);
-	
-		this.letterDLabel = new SimpleStringProperty(letterDLabel);
+	public String getCategoryName() {
+		return categoryName.get();
+	}
+	public StringProperty categoryNameProperty() {
+		return categoryName;
+	}
+	public void setCategoryName(String categoryName) {
+		this.categoryName.set(categoryName);
 	}
 	
-	
-
-	public String getCategoryName() {
-        return categoryName.get();
-    }
-
-    public void setCategoryName(String categoryName) {
-        this.categoryName = new SimpleStringProperty(categoryName);
-    }
-    
+	private StringProperty questionInput = new SimpleStringProperty(this, "questionInput", "");
 	public String getQuestionInput() {
-        return questionInput.get();
-    }
-
-    public void setQuestionInput(String questionInput) {
-        this.questionInput = new SimpleStringProperty(questionInput);
-    }
+		return questionInput.get();
+	}
+	public StringProperty questionInputProperty() {
+		return questionInput;
+	}
+	public void setQuestionInput(String questionInput) {
+		this.questionInput.set(questionInput);
+	}
+	private StringProperty letterLabel = new SimpleStringProperty(this, "letterLabel", "");
+	public String getLetterLabel() {
+		return letterLabel.get();
+	}
+	public StringProperty letterLabelProperty() {
+		return letterLabel;
+	}
+	public void setLetterLabel(String letterLabel) {
+		this.letterLabel.set(letterLabel);
+	}
+	private StringProperty letterALabel = new SimpleStringProperty(this, "letterALabel", "");
+	public String getLetterALabel() {
+		return letterALabel.get();
+	}
+	public StringProperty letterALabelProperty() {
+		return letterALabel;
+	}
+	public void setLetterALabel(String letterALabel) {
+		this.letterALabel.set(letterALabel);
+	}
+	private StringProperty letterBLabel = new SimpleStringProperty(this, "letterBLabel", "");
+	public String getLetterBLabel() {
+		return letterBLabel.get();
+	}
+	public StringProperty letterBLabelProperty() {
+		return letterBLabel;
+	}
+	public void setLetterBLabel(String letterBLabel) {
+		this.letterBLabel.set(letterBLabel);
+	}
+	private StringProperty letterCLabel = new SimpleStringProperty(this, "letterCLabel", "");
+	public String getLetterCLabel() {
+		return letterCLabel.get();
+	}
+	public StringProperty letterCLabelProperty() {
+		return letterCLabel;
+	}
+	public void setLetterCLabel(String letterCLabel) {
+		this.letterCLabel.set(letterCLabel);
+	}
+	private StringProperty letterDLabel = new SimpleStringProperty(this, "letterDLabel", "");
+	public String getLetterDLabel() {
+		return letterDLabel.get();
+	}
+	public StringProperty letterDLabelProperty() {
+		return letterDLabel;
+	}
+	public void setLetterDLabel(String letterDLabel) {
+		this.letterDLabel.set(letterDLabel);
+	}
 	
-    public String getLetterLabel() {
-        return letterLabel.get();
-    }
-
-    public void setletterLabel(String letterLabel) {
-        this.letterLabel = new SimpleStringProperty(letterLabel);
-    }
+	//ObservableList<Questions> observableQuestionsList = FXCollections.observableArrayList();
 	
-    public String getLetterALabel() {
-        return letterALabel.get();
-    }
-
-    public void setletterALabel(String letterALabel) {
-        this.letterALabel = new SimpleStringProperty(letterALabel);
-    }
-    
-    public String getLetterBLabel() {
-        return letterBLabel.get();
-    }
-
-    public void setletterBLabel(String letterBLabel) {
-        this.letterBLabel = new SimpleStringProperty(letterBLabel);
-    }
-    
-    public String getLetterCLabel() {
-        return letterCLabel.get();
-    }
-
-    public void setletterCLabel(String letterCLabel) {
-        this.letterCLabel = new SimpleStringProperty(letterCLabel);
-    }
-    
-    public String getLetterDLabel() {
-        return letterDLabel.get();
-    }
-
-    public void setletterDLabel(String letterDLabel) {
-        this.letterDLabel = new SimpleStringProperty(letterDLabel);
-    }
-	
-   
+	//for console printing purposes
+    public String toString() {
+    	return getCategoryName() + getQuestionInput() + getLetterLabel() +  getLetterALabel() + getLetterBLabel() + getLetterCLabel() + getLetterDLabel();
+		
+	}
 }
