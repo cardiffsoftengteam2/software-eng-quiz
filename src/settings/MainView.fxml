@@ -5,24 +5,24 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="settings.FXMLMainViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="settings.FXMLMainViewController">
    <children>
-      <Label layoutX="329.0" layoutY="292.0" text="Please select an option below:" textAlignment="CENTER">
+      <Label layoutX="359.0" layoutY="188.0" text="Please select an option below:" textAlignment="CENTER">
          <font>
-            <Font size="39.0" />
+            <Font size="18.0" />
          </font>
       </Label>
-      <Button layoutX="1021.0" layoutY="14.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="163.0" text="Log Out" textAlignment="CENTER" />
-      <Button fx:id="createButton" layoutX="228.0" layoutY="433.0" mnemonicParsing="false" onAction="#changeCreateSceneButtonPushed" prefHeight="102.0" prefWidth="318.0" text="Create Questions" textAlignment="CENTER">
+      <Button fx:id="createButton" layoutX="152.0" layoutY="311.0" mnemonicParsing="false" onAction="#changeCreateSceneButtonPushed" prefHeight="51.0" prefWidth="226.0" text="Create New Questions" textAlignment="CENTER">
          <font>
-            <Font size="24.0" />
+            <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="modifyButton" layoutX="612.0" layoutY="433.0" mnemonicParsing="false" onAction="#changeModifySceneButtonPushed" prefHeight="102.0" prefWidth="319.0" text="Modify Questions" textAlignment="RIGHT">
+      <Button fx:id="modifyButton" layoutX="555.0" layoutY="309.0" mnemonicParsing="false" onAction="#changeModifySceneButtonPushed" prefHeight="60.0" prefWidth="249.0" text="Modify Existing Questions" textAlignment="RIGHT">
          <font>
-            <Font size="24.0" />
+            <Font size="14.0" />
          </font>
       </Button>
       <AnchorPane layoutX="479.0" layoutY="-30.0" prefHeight="200.0" prefWidth="540.0" />
+      <Label layoutX="467.0" layoutY="331.0" text="OR" />
    </children>
 </AnchorPane>

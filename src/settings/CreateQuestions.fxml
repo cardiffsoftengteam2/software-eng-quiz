@@ -7,30 +7,33 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="settings.CreateQuestionsController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="settings.CreateQuestionsController">
    <children>
-      <Button layoutX="1079.0" layoutY="14.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="105.0" text="Log Out " />
+      <Button layoutX="735.0" layoutY="32.0" mnemonicParsing="false" onAction="#backToQuiz" prefHeight="37.0" prefWidth="105.0" text="Back to Quiz" />
       <Text layoutX="168.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="345.6829261779785" />
-      <Button fx:id="HomePgButton" layoutX="24.0" layoutY="690.0" mnemonicParsing="false" onAction="#doneButtonPushed" prefHeight="35.0" prefWidth="144.0" text="Home Page" textAlignment="CENTER" />
-      <TableView fx:id="tableView" layoutX="24.0" layoutY="83.0" prefHeight="502.0" prefWidth="1161.0">
+      <Button fx:id="HomePgButton" layoutX="104.0" layoutY="37.0" mnemonicParsing="false" onAction="#toAdmin" prefHeight="35.0" prefWidth="144.0" text="Back to Admin" textAlignment="CENTER" />
+      <TableView fx:id="tableView" layoutX="24.0" layoutY="83.0" prefHeight="306.0" prefWidth="838.0">
          <columns>
             <TableColumn fx:id="categoryColumn" prefWidth="106.0" text="Category" />
-            <TableColumn fx:id="questionColumn" prefWidth="273.0" text="Question" />
-            <TableColumn fx:id="letterLabelColumn" prefWidth="86.0" text="Letter Label" />
-            <TableColumn fx:id="letterALabelColumn" prefWidth="189.0" text="A." />
-            <TableColumn fx:id="letterBLabelColumn" prefWidth="177.0" text="B." />
-            <TableColumn fx:id="letterCLabelColumn" prefWidth="174.0" text="C." />
+            <TableColumn fx:id="questionColumn" prefWidth="153.0" text="Question" />
+            <TableColumn fx:id="letterLabelColumn" prefWidth="88.0" text="Letter Label" />
+            <TableColumn fx:id="letterALabelColumn" prefWidth="107.0" text="A." />
+            <TableColumn fx:id="letterBLabelColumn" prefWidth="119.0" text="B." />
+            <TableColumn fx:id="letterCLabelColumn" prefWidth="126.0" text="C." />
             <TableColumn fx:id="letterDLabelColumn" prefWidth="155.0" text="D." />
          </columns>
       </TableView>
-      <TextField fx:id="categoryInputTextField" alignment="CENTER" layoutX="24.0" layoutY="607.0" prefHeight="26.0" prefWidth="170.0" promptText="Category" />
-      <TextField fx:id="questionInputTextField" alignment="CENTER" layoutX="214.0" layoutY="607.0" prefHeight="26.0" prefWidth="465.0" promptText="Question" />
-      <TextField fx:id="inputLabelTextField" alignment="CENTER" layoutX="700.0" layoutY="607.0" prefHeight="26.0" prefWidth="148.0" promptText="Correct Answer Letter" />
-      <TextField fx:id="letterALabelTextField" alignment="CENTER" layoutX="901.0" layoutY="607.0" prefHeight="26.0" prefWidth="244.0" promptText="A." />
-      <TextField fx:id="letterBLabelTextField" alignment="CENTER" layoutX="43.0" layoutY="646.0" prefHeight="26.0" prefWidth="266.0" promptText="B." />
-      <TextField fx:id="letterCLabelTextField" alignment="CENTER" layoutX="379.0" layoutY="646.0" prefHeight="26.0" prefWidth="283.0" promptText="C." />
-      <TextField fx:id="letterDLabelTextField" alignment="CENTER" layoutX="725.0" layoutY="646.0" prefHeight="27.0" prefWidth="291.0" promptText="D." />
-      <Button fx:id="addButton" layoutX="1004.0" layoutY="691.0" mnemonicParsing="false" onAction="#addQuestionButtonPushed" prefHeight="34.0" prefWidth="174.0" text="Add Question" />
-      <Button fx:id="SaveButton" layoutX="539.0" layoutY="691.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="129.0" text="Save" />
+      <TextField fx:id="categoryInputTextField" alignment="CENTER" layoutX="67.0" layoutY="433.0" prefHeight="26.0" prefWidth="170.0" promptText="Category" />
+      <TextField fx:id="questionInputTextField" alignment="CENTER" layoutX="254.0" layoutY="429.0" prefHeight="27.0" prefWidth="419.0" promptText="Question" />
+      <TextField fx:id="inputLabelTextField" alignment="CENTER" layoutX="706.0" layoutY="427.0" prefHeight="26.0" prefWidth="148.0" promptText="Correct Answer Letter" />
+      <TextField fx:id="letterALabelTextField" alignment="CENTER" layoutX="67.0" layoutY="483.0" prefHeight="27.0" prefWidth="302.0" promptText="Type Answer A...." />
+      <TextField fx:id="letterBLabelTextField" alignment="CENTER" layoutX="543.0" layoutY="484.0" prefHeight="27.0" prefWidth="252.0" promptText="Type Answer B...." />
+      <TextField fx:id="letterCLabelTextField" alignment="CENTER" layoutX="48.0" layoutY="525.0" prefHeight="27.0" prefWidth="309.0" promptText="Type Answer C...." />
+      <TextField fx:id="letterDLabelTextField" alignment="CENTER" layoutX="511.0" layoutY="523.0" prefHeight="27.0" prefWidth="266.0" promptText="Type Answer D..." />
+      <Button fx:id="addButton" layoutX="619.0" layoutY="563.0" mnemonicParsing="false" onAction="#addQuestionButtonPushed" prefHeight="34.0" prefWidth="174.0" text="Add Question" />
+      <Button layoutX="363.0" layoutY="525.0" mnemonicParsing="false" onAction="#openButtonPushedC" text="Open Image C" />
+      <Button layoutX="381.0" layoutY="484.0" mnemonicParsing="false" onAction="#openButtonPushedA" text="Open Image A" />
+      <Button layoutX="790.0" layoutY="486.0" mnemonicParsing="false" onAction="#openButtonPushedB" text="Open Image B" />
+      <Button layoutX="784.0" layoutY="525.0" mnemonicParsing="false" onAction="#openButtonPushedD" text="Open Image D" />
    </children>
 </AnchorPane>

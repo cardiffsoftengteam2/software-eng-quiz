@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="setupScreen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SetupQuiz.SetupQuizController">
+   <children>
+      <GridPane prefHeight="606.0" prefWidth="910.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="758.0" minWidth="390.0" prefWidth="437.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="475.0" minWidth="2.0" prefWidth="433.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="274.0" minHeight="10.0" prefHeight="274.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="223.0" minHeight="10.0" prefHeight="17.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="165.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="78.0" minHeight="8.0" prefHeight="8.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TextField fx:id="SchoolYear" promptText="Add name of new School Year" GridPane.rowIndex="4" />
+            <TextField fx:id="School" promptText="Add Name of New School" GridPane.rowIndex="3" />
+            <Button mnemonicParsing="false" onAction="#AddSchoolYear" text="Add School and Year" GridPane.rowIndex="5" />
+            <Label text="QuizTakers" wrapText="true">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button mnemonicParsing="false" onAction="#backToAdmin" text="Back to Admin" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Button mnemonicParsing="false" onAction="#backToQuiz" text="Back to Quiz" GridPane.rowIndex="6" />
+            <Button fx:id="toggleButton" disable="true" mnemonicParsing="false" onAction="#toggleSelected" text="Hide/Show Selected" GridPane.rowIndex="2" />
+            <TableView fx:id="SchoolYearList" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+              <columns>
+                <TableColumn fx:id="school" prefWidth="229.0" text="School" />
+                <TableColumn fx:id="year" minWidth="5.0" prefWidth="107.0" text="Year" />
+                  <TableColumn fx:id="shown" prefWidth="99.0" text="Shown" />
+              </columns>
+            </TableView>
+            <ListView fx:id="questionCat" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Quiz Category" wrapText="true" GridPane.columnIndex="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="toggleButton1" disable="true" mnemonicParsing="false" onAction="#clearCats" text="No Category Restriction" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         </children>
+         <padding>
+            <Insets left="20.0" right="20.0" />
+         </padding>
+      </GridPane>
+   </children>
+</AnchorPane>

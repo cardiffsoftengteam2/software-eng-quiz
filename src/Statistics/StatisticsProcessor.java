@@ -19,6 +19,8 @@ public class StatisticsProcessor {
 
         try {
             BufferedReader fileIn = new BufferedReader(new FileReader(fName));
+            fileIn.readLine(); // this will read the first line
+            String line=null;
             while((line = fileIn.readLine()) != null) {
                 // Split on Comma
                 String[] statsArray = line.split(",");
@@ -31,6 +33,7 @@ public class StatisticsProcessor {
                 statsOb.setSchoolYear(statsArray[2]);
                 statsOb.setSchoolName(statsArray[3]);
                 statsOb.setNumberAnswered(Integer.parseInt(statsArray[4]));
+                statsOb.setShowHide(Boolean.parseBoolean(statsArray[5]));
 
                 stats.add(statsOb);
             }

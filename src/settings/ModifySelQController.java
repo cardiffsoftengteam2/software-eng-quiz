@@ -1,27 +1,45 @@
 package settings;
 
+
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import AdminFunctions.AdminFunctions;
+import Home.Home;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
+import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableColumn.CellEditEvent;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+import javafx.stage.Window;
+import javafx.util.Callback;
 
 public class ModifySelQController implements Initializable {
+	
+	BorderPane rootLayout;
+	
 	@FXML private Button HomePgButton;
 	@FXML private Button deleteQuestionButton;
 	
@@ -35,8 +53,69 @@ public class ModifySelQController implements Initializable {
 	@FXML private TableColumn<Questions, String> letterCLabelColumn;
 	@FXML private TableColumn<Questions, String> letterDLabelColumn;
 	
-	 
-		 
+	public ObservableList<Questions> observableQuestionsList = FXCollections.observableArrayList();
+
+	
+	 int selectedRowIndex;
+		
+	
+	//Event Listener on Button.onAction
+			@FXML
+			public void toAdmin(ActionEvent event) throws Exception {
+				Stage stage = (Stage) HomePgButton.getScene().getWindow();
+				AdminFunctions AdminFunctions = new AdminFunctions();
+				AdminFunctions.start(stage);
+			}
+
+			// Event Listener on Button.onAction
+						@FXML
+						public void backToQuiz(ActionEvent event) throws Exception {
+							Stage stage = (Stage) HomePgButton.getScene().getWindow();
+							Home Home = new Home();
+							Home.start(stage);
+						}
+	
+						
+
+	@Override
+	public void initialize(URL url, ResourceBundle rb) {
+		
+		deleteQuestionButton.setDisable(true);
+		tableView.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
+        		if(newSelection != null) {
+        			deleteQuestionButton.setDisable(false);
+        			 selectedRowIndex = tableView.getSelectionModel().getSelectedIndex();
+        				
+        		} else {
+        			deleteQuestionButton.setDisable(true);
+        		}
+        });
+		observableQuestionsList = CreateQuestionsController.getMyList();
+		tableView.setItems(observableQuestionsList);
+        tableView.setEditable(true);
+        tableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        tableView.setPlaceholder(new Label("Your Table is Empty"));
+		
+		categoryColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+		questionColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+		letterLabelColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+		letterALabelColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+		letterBLabelColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+		letterCLabelColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+		letterDLabelColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+
+			
+		categoryColumn.setCellValueFactory(cellData -> cellData.getValue().categoryNameProperty());
+		questionColumn.setCellValueFactory(cellData -> cellData.getValue().questionInputProperty());
+		letterLabelColumn.setCellValueFactory(cellData -> cellData.getValue().letterLabelProperty());
+		letterALabelColumn.setCellValueFactory(cellData -> cellData.getValue().letterALabelProperty());
+		letterBLabelColumn.setCellValueFactory(cellData -> cellData.getValue().letterBLabelProperty());
+		letterCLabelColumn.setCellValueFactory(cellData -> cellData.getValue().letterCLabelProperty());
+		letterDLabelColumn.setCellValueFactory(cellData -> cellData.getValue().letterDLabelProperty());
+
+	}
+
+	
 //Return to Homepage Button		 
 	public void changeHomeSceneButtonPushed(ActionEvent event) throws IOException {	
 		Parent MainViewParent = FXMLLoader.load(getClass().getResource("MainView.fxml"));
@@ -47,116 +126,67 @@ public class ModifySelQController implements Initializable {
 		
 	}
 
-
-	
 	 /***
 	  * Method to edit Data Cells
 	  *
 	  */
 	
-	public void changeCategoryCellEvent(CellEditEvent edittedCell)
-    {
-        Questions categorySelected =  tableView.getSelectionModel().getSelectedItem();
-        categorySelected.setCategoryName(edittedCell.getNewValue().toString());
-    }
-    
+	@FXML
+	public void saveQuestionCat(CellEditEvent<?,?> event) {
+		observableQuestionsList.get(selectedRowIndex).setCategoryName(event.getNewValue().toString());
+		QuestionWriter.write(observableQuestionsList);
+	}
 	
-	public void changeQuestionCellEvent(CellEditEvent edittedCell)
-    {
-        Questions questionSelected =  tableView.getSelectionModel().getSelectedItem();
-        questionSelected.setQuestionInput(edittedCell.getNewValue().toString());
-    }
-    
-	
-	public void changeLetterLabelCellEvent(CellEditEvent edittedCell)
-    {
-        Questions letterLabelSelected =  tableView.getSelectionModel().getSelectedItem();
-        letterLabelSelected.setletterLabel(edittedCell.getNewValue().toString());
-    }
-	
-	public void changeLetterALabelCellEvent(CellEditEvent edittedCell)
-    {
-        Questions letterALabelSelected =  tableView.getSelectionModel().getSelectedItem();
-        letterALabelSelected.setletterALabel(edittedCell.getNewValue().toString());
-    }
-    
-	public void changeLetterBLabelCellEvent(CellEditEvent edittedCell)
-    {
-        Questions letterBLabelSelected =  tableView.getSelectionModel().getSelectedItem();
-        letterBLabelSelected.setletterBLabel(edittedCell.getNewValue().toString());
-    }
-    
-	public void changeLetterCLabelCellEvent(CellEditEvent edittedCell)
-    {
-        Questions letterCLabelSelected =  tableView.getSelectionModel().getSelectedItem();
-        letterCLabelSelected.setletterCLabel(edittedCell.getNewValue().toString());
-    }
-	
-	
-	public void changeLetterDLabelCellEvent(CellEditEvent edittedCell)
-    {
-        Questions letterDLabelSelected =  tableView.getSelectionModel().getSelectedItem();
-        letterDLabelSelected.setletterDLabel(edittedCell.getNewValue().toString());
-    }
-	
-	
-	//Add New Question Button	
-	public void deleteButtonPushed() {
-		ObservableList<Questions> selectedRows, allQuestions;
-		allQuestions = tableView.getItems();
-	
-		//this gives us the rows that were selected
-        selectedRows = tableView.getSelectionModel().getSelectedItems();
-        
-        //loop over the selected rows and remove the Person objects from the table
-        for (Questions questions: selectedRows)
-        {
-            allQuestions.remove(questions);
-        }
-    }
-		
-	
-		
-	
-	/**
-	 * Method return an ObservableList of Question Objects
-	 */
-	
-	public ObservableList<Questions> getQuestions()
-	{
-		 ObservableList<Questions> questions = FXCollections.observableArrayList();
-		 questions.add(new Questions("categoryName", "questionInput", "letterLabel", "letterALabel", "letterBLabel", "letterCLabel", "letterDLabel"));
-		
-		 return questions;
+	@FXML
+	public void saveQuestionInput(CellEditEvent<?,?> event) {
+		observableQuestionsList.get(selectedRowIndex).setQuestionInput(event.getNewValue().toString());
+		QuestionWriter.write(observableQuestionsList);
+	}
+	// Event Listener on TableColumn[#letterLabelColumn].onEditCommit
+	@FXML
+	public void saveQuestionAns(CellEditEvent<?,?> event) {
+		observableQuestionsList.get(selectedRowIndex).setLetterLabel(event.getNewValue().toString());
+		QuestionWriter.write(observableQuestionsList);
+	}
+	// Event Listener on TableColumn[#letterALabelColumn].onEditCommit
+	@FXML
+	public void saveQuestionA(CellEditEvent<?,?> event) {
+		observableQuestionsList.get(selectedRowIndex).setLetterALabel(event.getNewValue().toString());
+		QuestionWriter.write(observableQuestionsList);
+	}
+	// Event Listener on TableColumn[#letterBLabelColumn].onEditCommit
+	@FXML
+	public void saveQuestionB(CellEditEvent<?,?> event) {
+		observableQuestionsList.get(selectedRowIndex).setLetterBLabel(event.getNewValue().toString());
+		QuestionWriter.write(observableQuestionsList);
+	}
+	// Event Listener on TableColumn[#letterCLabelColumn].onEditCommit
+	@FXML
+	public void saveQuestionC(CellEditEvent<?,?> event) {
+		observableQuestionsList.get(selectedRowIndex).setLetterCLabel(event.getNewValue().toString());
+		QuestionWriter.write(observableQuestionsList);
+	}
+	// Event Listener on TableColumn[#letterDLabelColumn].onEditCommit
+	@FXML
+	public void saveQuestionD(CellEditEvent<?,?> event) {
+		observableQuestionsList.get(selectedRowIndex).setLetterDLabel(event.getNewValue().toString());
+		QuestionWriter.write(observableQuestionsList);
 	}
 	
 /**
- * Initializes the controller class.
+ * DELETE
  */
 	
-		 @Override
-			public void initialize(URL location, ResourceBundle resources) {
-			//set up the columns in the table
-			categoryColumn.setCellValueFactory(new PropertyValueFactory<Questions, String>("categoryName"));
-			questionColumn.setCellValueFactory(new PropertyValueFactory<Questions, String>("questionInput"));
-			letterLabelColumn.setCellValueFactory(new PropertyValueFactory<Questions, String>("letterLabel"));
-			letterALabelColumn.setCellValueFactory(new PropertyValueFactory<Questions, String>("letterALabel"));
-			letterBLabelColumn.setCellValueFactory(new PropertyValueFactory<Questions, String>("letterBLabel"));
-			letterCLabelColumn.setCellValueFactory(new PropertyValueFactory<Questions, String>("letterCLabel"));
-			letterDLabelColumn.setCellValueFactory(new PropertyValueFactory<Questions, String>("letterDLabel"));
-	 
-			//Update the table to allow for the fields to be editable
-	        
-	        tableView.setEditable(true);
-	        categoryColumn.setCellFactory(TextFieldTableCell.forTableColumn());
-	        questionColumn.setCellFactory(TextFieldTableCell.forTableColumn());
-	        letterLabelColumn.setCellFactory(TextFieldTableCell.forTableColumn());
-	        letterALabelColumn.setCellFactory(TextFieldTableCell.forTableColumn());
-	        letterBLabelColumn.setCellFactory(TextFieldTableCell.forTableColumn());
-	        letterCLabelColumn.setCellFactory(TextFieldTableCell.forTableColumn());
-	        letterDLabelColumn.setCellFactory(TextFieldTableCell.forTableColumn());
-		 
-		 
-		 }
-
-}
+	public void deleteButtonPushed() {
+		
+		
+		
+       
+       observableQuestionsList.remove(selectedRowIndex);
+       QuestionWriter.write(observableQuestionsList);
+       
+        
+        
+    }
+	
+    }

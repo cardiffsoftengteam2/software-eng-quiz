@@ -41,6 +41,7 @@ public void changeCreateSceneButtonPushed(ActionEvent event) throws IOException 
 
 public void changeModifySceneButtonPushed(ActionEvent event) throws IOException {
 	
+	
 	Parent createCategoryParent = FXMLLoader.load(getClass().getResource("SelectModifyingQ.fxml"));
 	Scene createCategoryScene = new Scene (createCategoryParent);
 	Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();

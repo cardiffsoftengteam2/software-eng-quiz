@@ -7,6 +7,7 @@ public class Statistics {
     private String schoolYear;
     private String schoolName;
     private int questionsAnswered;
+    private boolean showHide;
 
     public Statistics() {
         this.correct = 0;
@@ -14,6 +15,7 @@ public class Statistics {
         this.schoolYear = "";
         this.schoolName = "";
         this.questionsAnswered = 0;
+        this.showHide = true;
     }
 
     public Statistics(int correct, int incorrect, String year, String sName, int answered) {
@@ -27,6 +29,15 @@ public class Statistics {
 
     // GETTERS
 
+    public boolean getShowHide() {
+    		return showHide;
+    }
+    
+    public void setShowHide(boolean showHide) {
+    	  this.showHide = showHide;
+    }
+    
+    
     public int getCorrect() {
         return correct;
     }
@@ -69,4 +80,10 @@ public class Statistics {
         this.questionsAnswered = answered;
     }
 
+    @Override
+ public String toString() {
+  
+ return schoolName + " - " + schoolYear;
+    }
+    
 }

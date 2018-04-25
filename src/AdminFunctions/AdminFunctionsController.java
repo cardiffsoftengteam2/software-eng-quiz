@@ -1,4 +1,4 @@
-package AdminLogin;
+package AdminFunctions;
 
 import javafx.fxml.FXML;
 import javafx.event.ActionEvent;
@@ -6,6 +6,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import settings.Main;
 import Statistics.StatisticsUi;
+import Home.Home;
+import SetupQuiz.SetupQuiz;
 
 public class AdminFunctionsController {
 	@FXML
@@ -34,13 +36,17 @@ public class AdminFunctionsController {
 	}
 	// Event Listener on Button.onAction
 	@FXML
-	public void modifyQuestion(ActionEvent event) {
-		/**
-		 * Call the modifyQuestion method.
-		 * Again not sure it's calling the right thing.
-		 */
-
-		 // FXMLMainViewController modify = new FXMLMainViewController();
-		 // modify.changeModifySceneButtonPushed();
+	public void toSetup(ActionEvent event) throws Exception {
+		Stage stage = (Stage) adminFunctions.getScene().getWindow();
+		SetupQuiz SetupQuiz = new SetupQuiz();
+		SetupQuiz.start(stage);
 	}
+	
+	// Event Listener on Button.onAction
+			@FXML
+			public void backToQuiz(ActionEvent event) throws Exception {
+				Stage stage = (Stage) adminFunctions.getScene().getWindow();
+				Home Home = new Home();
+				Home.start(stage);
+			}
 }

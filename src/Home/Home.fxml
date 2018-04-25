@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="Home" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Home.HomeController">
+   <children>
+      <GridPane alignment="TOP_CENTER" hgap="10.0" layoutY="57.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="423.0" prefWidth="527.0" vgap="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="133.0" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="382.3333435058594" minWidth="10.0" prefWidth="382.3333435058594" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="164.0" minWidth="10.0" prefWidth="64.66665649414062" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="247.0" minHeight="10.0" prefHeight="247.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="182.0" minHeight="10.0" prefHeight="108.66665649414062" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="182.0" minHeight="10.0" prefHeight="108.66665649414062" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="310.5" minHeight="10.0" prefHeight="152.5" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="208.33334350585938" minHeight="10.0" prefHeight="113.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="startBtn" mnemonicParsing="false" onAction="#startQuiz" text="Start Quiz" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="TOP" />
+            <Label prefHeight="29.0" prefWidth="279.0" text="Welcome to the BigQuiz" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="SchoolYear" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label fx:id="message" GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.valignment="TOP" />
+            <Label contentDisplay="BOTTOM" prefHeight="29.0" prefWidth="197.0" text="Select Your School and Year" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Button alignment="BOTTOM_RIGHT" contentDisplay="BOTTOM" mnemonicParsing="false" onAction="#toAdmin" text="Admin" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
