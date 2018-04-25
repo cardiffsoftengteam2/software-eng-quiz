@@ -219,6 +219,7 @@ Statistics statToUpdate = new Statistics();
         questionLabel1.setText(observableQuestionsList.get(questionCount).getQuestionInput());
        
 	        if(observableQuestionsList.get(questionCount).isLetterALabelPic() == true) {
+	        	answer1Label.setText(null);
 	        	FileInputStream stream = new FileInputStream(observableQuestionsList.get(questionCount).getLetterALabel());
 	        		Image image = new Image(stream, 150, 150, true, true);
 	    		answer1Label.setGraphic(new ImageView(image));	
@@ -227,6 +228,7 @@ Statistics statToUpdate = new Statistics();
 	    		answer1Label.setText(observableQuestionsList.get(questionCount).getLetterALabel());
 	    		}
 	    		if(observableQuestionsList.get(questionCount).isLetterBLabelPic() == true) {
+	    			answer2Label.setText(null);
 	    			FileInputStream stream = new FileInputStream(observableQuestionsList.get(questionCount).getLetterBLabel());
 	        		Image image = new Image(stream, 150, 150, true, true);
 	    		answer2Label.setGraphic(new ImageView(image));	
@@ -235,6 +237,7 @@ Statistics statToUpdate = new Statistics();
 	    		answer2Label.setText(observableQuestionsList.get(questionCount).getLetterBLabel());
 	    		}
 	    		if(observableQuestionsList.get(questionCount).isLetterCLabelPic() == true) {
+	    			answer3Label.setText(null);
 	    			FileInputStream stream = new FileInputStream(observableQuestionsList.get(questionCount).getLetterCLabel());
 	        		Image image = new Image(stream, 150, 150, true, true);
 	    		answer3Label.setGraphic(new ImageView(image));	
@@ -243,6 +246,7 @@ Statistics statToUpdate = new Statistics();
 	    		answer3Label.setText(observableQuestionsList.get(questionCount).getLetterCLabel());
 	    		}
 	    		if(observableQuestionsList.get(questionCount).isLetterDLabelPic() == true) {
+	    			answer4Label.setText(null);
 	    			FileInputStream stream = new FileInputStream(observableQuestionsList.get(questionCount).getLetterDLabel());
 	        		Image image = new Image(stream, 150, 150, true, true);
 	    		answer4Label.setGraphic(new ImageView(image));	
@@ -343,6 +347,7 @@ Statistics statToUpdate = new Statistics();
     		statToUpdate = setStats(schoolYear);
     		questionLabel1.setText(observableQuestionsList.get(0).getQuestionInput());
     		if(observableQuestionsList.get(0).isLetterALabelPic() == true) {
+    			answer1Label.setText(null);
     			FileInputStream stream;
 				try {
 					stream = new FileInputStream(observableQuestionsList.get(0).getLetterALabel());
@@ -358,6 +363,7 @@ Statistics statToUpdate = new Statistics();
     		answer1Label.setText(observableQuestionsList.get(0).getLetterALabel());
     		}
     		if(observableQuestionsList.get(0).isLetterBLabelPic() == true) {
+    			answer2Label.setText(null);
     			
     			FileInputStream stream;
 				try {
@@ -374,6 +380,7 @@ Statistics statToUpdate = new Statistics();
     		answer2Label.setText(observableQuestionsList.get(0).getLetterBLabel());
     		}
     		if(observableQuestionsList.get(0).isLetterCLabelPic() == true) {
+    			answer3Label.setText(null);
     			
     			FileInputStream stream;
 				try {
@@ -389,6 +396,7 @@ Statistics statToUpdate = new Statistics();
     		answer3Label.setText(observableQuestionsList.get(0).getLetterCLabel());
     		}
     		if(observableQuestionsList.get(0).isLetterDLabelPic() == true) {
+    			answer4Label.setText(null);
    		
     			FileInputStream stream;
 				try {

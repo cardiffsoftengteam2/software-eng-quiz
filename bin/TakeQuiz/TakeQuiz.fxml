@@ -49,7 +49,7 @@
                <children>
                   <HBox alignment="CENTER" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <children>
-                        <RadioButton fx:id="answer1Label" ellipsisString="" mnemonicParsing="false" prefHeight="51.0" prefWidth="134.0" text="Answer One">
+                        <RadioButton fx:id="answer1Label" ellipsisString="" mnemonicParsing="false" text="Answer One">
                            <toggleGroup>
                               <ToggleGroup fx:id="answerGroup" />
                            </toggleGroup>
@@ -58,17 +58,17 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="51.0" prefWidth="128.0" GridPane.rowIndex="1">
                      <children>
-                        <RadioButton fx:id="answer3Label" ellipsisString="" mnemonicParsing="false" prefHeight="51.0" prefWidth="133.0" text="Answer Three" toggleGroup="$answerGroup" />
+                        <RadioButton fx:id="answer3Label" ellipsisString="" mnemonicParsing="false" text="Answer Three" toggleGroup="$answerGroup" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="0.0" prefWidth="242.0" GridPane.columnIndex="1">
                      <children>
-                        <RadioButton fx:id="answer2Label" ellipsisString="" mnemonicParsing="false" prefHeight="51.0" prefWidth="126.0" text="Answer Two" toggleGroup="$answerGroup" />
+                        <RadioButton fx:id="answer2Label" ellipsisString="" mnemonicParsing="false" text="Answer Two" toggleGroup="$answerGroup" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <children>
-                        <RadioButton fx:id="answer4Label" ellipsisString="" mnemonicParsing="false" prefHeight="51.0" prefWidth="130.0" text="Answer Four" toggleGroup="$answerGroup" />
+                        <RadioButton fx:id="answer4Label" ellipsisString="" mnemonicParsing="false" text="Answer Four" toggleGroup="$answerGroup" />
                      </children>
                   </HBox>
                </children>

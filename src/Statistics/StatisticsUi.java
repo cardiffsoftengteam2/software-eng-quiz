@@ -11,16 +11,19 @@ import javafx.collections.FXCollections;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonBar;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 
 
 public class StatisticsUi extends Application {
 
+	private BorderPane borderPane;
     private StatisticsProcessor output = new StatisticsProcessor();
     private Stage window;
     private String statsFile = "stats.csv";
@@ -35,6 +38,8 @@ public class StatisticsUi extends Application {
     public void start (Stage primaryStage) throws Exception {
         window = primaryStage;
         window.setTitle("Quiz Statistics");
+        
+        borderPane = new BorderPane();
 
         // Set up label and table view
         Label nameLabel = new Label();
@@ -64,7 +69,7 @@ public class StatisticsUi extends Application {
 
             statsTable.setItems(stats);
             statsTable.getColumns().addAll(correctColumn, incorrectColumn, yearColumn, schoolColumn, answeredColumn);
-
+            
         // Button to return to admin page.
         Button returnAdmin = new Button();
         returnAdmin.setText("Back to Admin");
@@ -89,11 +94,16 @@ public class StatisticsUi extends Application {
 			}
 		});
 
-        VBox vBox = new VBox(20);
-        vBox.setSpacing(10);
-        vBox.getChildren().addAll(returnAdmin, logout, statsTable);
+//        VBox vBox = new VBox(20);
+//        vBox.setSpacing(10);
+//        vBox.getChildren().addAll(returnAdmin, logout, statsTable);
+        ButtonBar buttonBar = new ButtonBar();
+        buttonBar.getButtons().addAll(logout, returnAdmin);
+ 
+        borderPane.setCenter(statsTable);
+        borderPane.setTop(buttonBar);
 
-        Scene scene = new Scene(vBox, 900, 600);
+        Scene scene = new Scene(borderPane, 900, 600);
         window.setScene(scene);
         window.show();
     }
