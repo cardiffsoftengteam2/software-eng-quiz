@@ -9,10 +9,10 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="settings.ModifySelQController">
    <children>
-      <Button layoutX="759.0" layoutY="36.0" mnemonicParsing="false" onAction="#backToQuiz" prefHeight="35.0" prefWidth="118.0" text="Back to Quiz" />
-      <Text layoutX="185.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please select the question you wish to modify:" textAlignment="CENTER" wrappingWidth="570.383129119873">
+      <Button layoutX="762.0" layoutY="16.0" mnemonicParsing="false" onAction="#backToQuiz" prefHeight="19.0" prefWidth="118.0" styleClass="backToQuizBtn" text="Back to Quiz" />
+      <Text layoutX="188.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please select the question you wish to modify:" textAlignment="CENTER" wrappingWidth="570.383129119873">
          <font>
-            <Font size="24.0" />
+            <Font size="18.0" />
          </font>
       </Text>
       <TableView fx:id="tableView" layoutX="32.0" layoutY="101.0" prefHeight="374.0" prefWidth="837.0">
@@ -27,6 +27,6 @@
          </columns>
       </TableView>
       <Button fx:id="deleteQuestionButton" layoutX="665.0" layoutY="517.0" mnemonicParsing="false" onAction="#deleteButtonPushed" prefHeight="39.0" prefWidth="166.0" text="Delete " />
-      <Button fx:id="HomePgButton" layoutX="38.0" layoutY="31.0" mnemonicParsing="false" onAction="#toAdmin" prefHeight="39.0" prefWidth="154.0" text="Back to Admin" />
+      <Button fx:id="HomePgButton" layoutX="40.0" layoutY="19.0" mnemonicParsing="false" onAction="#toAdmin" prefHeight="11.0" prefWidth="134.0" text="Back to Admin" />
    </children>
 </AnchorPane>

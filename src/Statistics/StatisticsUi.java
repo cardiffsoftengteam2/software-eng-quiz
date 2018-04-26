@@ -12,6 +12,7 @@ import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBar;
+import javafx.scene.control.ButtonBar.ButtonData;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
@@ -44,16 +45,9 @@ public class StatisticsUi extends Application {
         // Set up label and table view
         Label nameLabel = new Label();
         statsTable = new TableView<>();
+        borderPane.setPadding(new Insets(0, 0, 20, 20));
 
             ObservableList<Statistics> stats = getStats(statsFile);
-
-            TableColumn<Statistics, String> correctColumn = new TableColumn<>("Number Correct");
-            correctColumn.setMinWidth(100);
-            correctColumn.setCellValueFactory(new PropertyValueFactory<>("correct"));
-
-            TableColumn<Statistics, String> incorrectColumn = new TableColumn<>("Number Incorrect");
-            incorrectColumn.setMinWidth(100);
-            incorrectColumn.setCellValueFactory(new PropertyValueFactory<>("incorrect"));
 
             TableColumn<Statistics, String> yearColumn = new TableColumn<>("School Year");
             yearColumn.setMinWidth(100);
@@ -66,9 +60,17 @@ public class StatisticsUi extends Application {
             TableColumn<Statistics, String> answeredColumn = new TableColumn<>("Number Answered");
             answeredColumn.setMinWidth(100);
             answeredColumn.setCellValueFactory(new PropertyValueFactory<>("numberAnswered"));
+            
+            TableColumn<Statistics, String> correctColumn = new TableColumn<>("Number Correct");
+            correctColumn.setMinWidth(100);
+            correctColumn.setCellValueFactory(new PropertyValueFactory<>("correct"));
+
+            TableColumn<Statistics, String> incorrectColumn = new TableColumn<>("Number Incorrect");
+            incorrectColumn.setMinWidth(100);
+            incorrectColumn.setCellValueFactory(new PropertyValueFactory<>("incorrect"));
 
             statsTable.setItems(stats);
-            statsTable.getColumns().addAll(correctColumn, incorrectColumn, yearColumn, schoolColumn, answeredColumn);
+            statsTable.getColumns().addAll(schoolColumn, yearColumn, answeredColumn, correctColumn, incorrectColumn);
             
         // Button to return to admin page.
         Button returnAdmin = new Button();
@@ -98,7 +100,11 @@ public class StatisticsUi extends Application {
 //        vBox.setSpacing(10);
 //        vBox.getChildren().addAll(returnAdmin, logout, statsTable);
         ButtonBar buttonBar = new ButtonBar();
+        buttonBar.setPrefWidth(600);
         buttonBar.getButtons().addAll(logout, returnAdmin);
+        buttonBar.setPadding(new Insets(20, 20, 50, 50));
+        buttonBar.setButtonData(logout, ButtonData.RIGHT);
+        buttonBar.setButtonData(returnAdmin, ButtonData.LEFT);
  
         borderPane.setCenter(statsTable);
         borderPane.setTop(buttonBar);

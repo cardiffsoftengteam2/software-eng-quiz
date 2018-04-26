@@ -6,15 +6,15 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="resultsPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TakeQuiz.ResultsController">
+<BorderPane fx:id="resultsPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" styleClass="quiz-anchor" stylesheets="@../../styles.css" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TakeQuiz.ResultsController">
    <center>
-      <Label fx:id="resultString" text="This is where the results will be displayed" textAlignment="CENTER" BorderPane.alignment="CENTER">
+      <Label fx:id="resultString" styleClass="quiz-label" text="Score &#10;0/0" textAlignment="CENTER" BorderPane.alignment="CENTER">
          <font>
             <Font size="36.0" />
          </font></Label>
    </center>
    <bottom>
-      <Button alignment="CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" onAction="#goHome" prefHeight="101.0" prefWidth="153.0" text="Restart" BorderPane.alignment="CENTER">
+      <Button alignment="CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" onAction="#goHome" prefHeight="70.0" prefWidth="153.0" text="Restart" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets bottom="100.0" />
          </BorderPane.margin>

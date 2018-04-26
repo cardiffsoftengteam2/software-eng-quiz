@@ -13,16 +13,22 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TakeQuiz.TakeQuizController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" styleClass="quiz-anchor" stylesheets="@../../styles.css" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TakeQuiz.TakeQuizController">
    <bottom>
       <HBox BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="endQuiz" mnemonicParsing="false" onAction="#handleEndQuizClick" prefHeight="32.0" prefWidth="150.0" text="End Quiz" />
+            <Button fx:id="endQuiz" mnemonicParsing="false" onAction="#handleEndQuizClick" prefHeight="32.0" prefWidth="150.0" text="End Quiz">
+               <HBox.margin>
+                  <Insets bottom="20.0" left="40.0" right="20.0" top="10.0" />
+               </HBox.margin></Button>
             <Region HBox.hgrow="ALWAYS" />
             <Button fx:id="nextQuestion" mnemonicParsing="false" onAction="#handleNextQuestionClick" prefHeight="32.0" prefWidth="150.0" text="Next Question">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
+               <HBox.margin>
+                  <Insets left="20.0" right="40.0" top="10.0" />
+               </HBox.margin>
             </Button>
          </children>
       </HBox>
@@ -49,7 +55,7 @@
                <children>
                   <HBox alignment="CENTER" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <children>
-                        <RadioButton fx:id="answer1Label" ellipsisString="" mnemonicParsing="false" text="Answer One">
+                        <RadioButton fx:id="answer1Label" ellipsisString="" mnemonicParsing="false" styleClass="quiz-label" text="Answer One">
                            <toggleGroup>
                               <ToggleGroup fx:id="answerGroup" />
                            </toggleGroup>
@@ -58,23 +64,23 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="51.0" prefWidth="128.0" GridPane.rowIndex="1">
                      <children>
-                        <RadioButton fx:id="answer3Label" ellipsisString="" mnemonicParsing="false" text="Answer Three" toggleGroup="$answerGroup" />
+                        <RadioButton fx:id="answer3Label" ellipsisString="" mnemonicParsing="false" styleClass="quiz-label" text="Answer Three" toggleGroup="$answerGroup" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="0.0" prefWidth="242.0" GridPane.columnIndex="1">
                      <children>
-                        <RadioButton fx:id="answer2Label" ellipsisString="" mnemonicParsing="false" text="Answer Two" toggleGroup="$answerGroup" />
+                        <RadioButton fx:id="answer2Label" ellipsisString="" mnemonicParsing="false" styleClass="quiz-label" text="Answer Two" toggleGroup="$answerGroup" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <children>
-                        <RadioButton fx:id="answer4Label" ellipsisString="" mnemonicParsing="false" text="Answer Four" toggleGroup="$answerGroup" />
+                        <RadioButton fx:id="answer4Label" ellipsisString="" mnemonicParsing="false" styleClass="quiz-label" text="Answer Four" toggleGroup="$answerGroup" />
                      </children>
                   </HBox>
                </children>
             </GridPane>
             <HBox GridPane.hgrow="SOMETIMES" GridPane.vgrow="SOMETIMES" />
-            <Label fx:id="questionLabel1" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="72.0" prefWidth="680.0" text="This is where the question text will go" textAlignment="CENTER" wrapText="true">
+            <Label fx:id="questionLabel1" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="72.0" prefWidth="680.0" styleClass="quiz-label" text="This is where the question text will go" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font size="21.0" />
                </font>
@@ -88,10 +94,13 @@
       </GridPane>
    </center>
    <top>
-      <Label fx:id="questionLabel" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="72.0" prefWidth="680.0" text="Question One" textAlignment="CENTER">
+      <Label fx:id="questionLabel" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="72.0" prefWidth="680.0" styleClass="quiz-label" text="Question One" textAlignment="CENTER">
          <font>
             <Font size="41.0" />
          </font>
+         <BorderPane.margin>
+            <Insets top="40.0" />
+         </BorderPane.margin>
       </Label>
    </top>
    <left>

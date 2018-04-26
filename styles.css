@@ -1,0 +1,10 @@
+.quiz-anchor {
+	-fx-background-image:url("background.png");
+	-fx-background-size: cover;
+}
+
+.quiz-label {
+	-fx-text-fill: WHITE;
+}
+ 
+

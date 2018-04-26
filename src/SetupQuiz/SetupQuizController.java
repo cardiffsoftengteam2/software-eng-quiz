@@ -205,7 +205,7 @@ private static final String FILE_HEADER = "correct,incorrect,schoolYear,schoolNa
 	@FXML
 	public void AddSchoolYear(ActionEvent event) {
 		Statistics newSchoolYear = new Statistics();
-		newSchoolYear.setSchoolName(School.getText().toUpperCase());
+		newSchoolYear.setSchoolName(School.getText());
 		newSchoolYear.setSchoolYear(SchoolYear.getText());
 		stats.add(newSchoolYear);
 		FileWriter fileWriter = null;

@@ -115,7 +115,7 @@ Statistics statToUpdate = new Statistics();
     		if(observableQuestionsList.get(questionCount).getLetterLabel().toUpperCase().equals("A")) {
     				if(answer1Label.isSelected() == true) {
     					message.setText("Correct!");
-    		            message.setTextFill(Color.rgb(21, 117, 84));
+    		            message.setTextFill(Color.rgb(45, 233, 31));
     					sessionCorrect++;
     					int correct = statToUpdate.getCorrect();
     					correct++;
@@ -131,7 +131,7 @@ Statistics statToUpdate = new Statistics();
 				if(answer2Label.isSelected() == true) {
 					sessionCorrect++;
 					message.setText("Correct!");
-		            message.setTextFill(Color.rgb(21, 117, 84));
+					 message.setTextFill(Color.rgb(45, 233, 31));
 					
 					int correct = statToUpdate.getCorrect();
 					correct++;
@@ -146,7 +146,7 @@ Statistics statToUpdate = new Statistics();
 		} else if(observableQuestionsList.get(questionCount).getLetterLabel().toUpperCase().equals("C")) {
 			if(answer3Label.isSelected() == true) {
 				message.setText("Correct!");
-	            message.setTextFill(Color.rgb(21, 117, 84));
+				 message.setTextFill(Color.rgb(45, 233, 31));
 				sessionCorrect++;
 				int correct = statToUpdate.getCorrect();
 				correct++;
@@ -161,7 +161,7 @@ Statistics statToUpdate = new Statistics();
 	} else if(observableQuestionsList.get(questionCount).getLetterLabel().toUpperCase().equals("D")) {
 		if(answer4Label.isSelected() == true) {
 			 message.setText("Correct!");
-	            message.setTextFill(Color.rgb(21, 117, 84));
+			 message.setTextFill(Color.rgb(45, 233, 31));
 			sessionCorrect++;
 			int correct = statToUpdate.getCorrect();
 			correct++;
@@ -183,7 +183,7 @@ Statistics statToUpdate = new Statistics();
     		    @Override
     		    protected Void call() throws Exception {
     		       try {
-    		            Thread.sleep(2000);
+    		            Thread.sleep(1000);
     		       } catch (InterruptedException e) {}
     		       return null;    
     		    }
@@ -341,7 +341,10 @@ Statistics statToUpdate = new Statistics();
     	
     		shuffleQs(observableQuestionsList);
     		
+    		if(questionCategory.equals("null")) {
+    		} else {
     		observableQuestionsList = findCat(questionCategory);
+    		}
     		
     		
     		statToUpdate = setStats(schoolYear);

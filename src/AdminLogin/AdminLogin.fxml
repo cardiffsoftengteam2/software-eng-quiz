@@ -20,8 +20,8 @@
         <rowConstraints>
           <RowConstraints maxHeight="247.0" minHeight="10.0" prefHeight="247.0" vgrow="SOMETIMES" />
           <RowConstraints maxHeight="182.0" minHeight="10.0" prefHeight="108.66665649414062" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="208.33334350585938" minHeight="10.0" prefHeight="208.33334350585938" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="208.33334350585938" minHeight="10.0" prefHeight="208.33334350585938" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="208.33334350585938" minHeight="10.0" prefHeight="79.5" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="236.5" minHeight="10.0" prefHeight="236.5" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
             <Button mnemonicParsing="false" onAction="#SubmitPassword" text="Login" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP" />

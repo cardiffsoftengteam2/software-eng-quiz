@@ -21,6 +21,7 @@
           <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="475.0" minWidth="2.0" prefWidth="433.0" />
         </columnConstraints>
         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints maxHeight="274.0" minHeight="10.0" prefHeight="274.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="223.0" minHeight="10.0" prefHeight="17.0" vgrow="SOMETIMES" />
@@ -30,31 +31,37 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <TextField fx:id="SchoolYear" promptText="Add name of new School Year" GridPane.rowIndex="4" />
-            <TextField fx:id="School" promptText="Add Name of New School" GridPane.rowIndex="3" />
-            <Button mnemonicParsing="false" onAction="#AddSchoolYear" text="Add School and Year" GridPane.rowIndex="5" />
-            <Label text="QuizTakers" wrapText="true">
+            <TextField fx:id="SchoolYear" promptText="Add name of new School Year" GridPane.rowIndex="5" />
+            <TextField fx:id="School" promptText="Add Name of New School" GridPane.rowIndex="4" />
+            <Button mnemonicParsing="false" onAction="#AddSchoolYear" text="Add School and Year" GridPane.rowIndex="6" />
+            <Label text="QuizTakers" wrapText="true" GridPane.rowIndex="1">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button mnemonicParsing="false" onAction="#backToAdmin" text="Back to Admin" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-            <Button mnemonicParsing="false" onAction="#backToQuiz" text="Back to Quiz" GridPane.rowIndex="6" />
-            <Button fx:id="toggleButton" disable="true" mnemonicParsing="false" onAction="#toggleSelected" text="Hide/Show Selected" GridPane.rowIndex="2" />
-            <TableView fx:id="SchoolYearList" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+            <Button mnemonicParsing="false" onAction="#backToAdmin" text="Back to Admin" GridPane.halignment="LEFT">
+               <GridPane.margin>
+                  <Insets left="50.0" right="50.0" />
+               </GridPane.margin></Button>
+            <Button mnemonicParsing="false" onAction="#backToQuiz" text="Back to Quiz" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
+               <GridPane.margin>
+                  <Insets left="50.0" right="50.0" />
+               </GridPane.margin></Button>
+            <Button fx:id="toggleButton" disable="true" mnemonicParsing="false" onAction="#toggleSelected" text="Hide/Show Selected" GridPane.rowIndex="3" />
+            <TableView fx:id="SchoolYearList" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
               <columns>
                 <TableColumn fx:id="school" prefWidth="229.0" text="School" />
                 <TableColumn fx:id="year" minWidth="5.0" prefWidth="107.0" text="Year" />
                   <TableColumn fx:id="shown" prefWidth="99.0" text="Shown" />
               </columns>
             </TableView>
-            <ListView fx:id="questionCat" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Label text="Quiz Category" wrapText="true" GridPane.columnIndex="1">
+            <ListView fx:id="questionCat" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text="Quiz Category" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button fx:id="toggleButton1" disable="true" mnemonicParsing="false" onAction="#clearCats" text="No Category Restriction" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button fx:id="toggleButton1" disable="true" mnemonicParsing="false" onAction="#clearCats" text="No Category Restriction" GridPane.columnIndex="1" GridPane.rowIndex="3" />
          </children>
          <padding>
             <Insets left="20.0" right="20.0" />

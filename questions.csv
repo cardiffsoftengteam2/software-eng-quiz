@@ -1,4 +1,27 @@
 category,question,letterLabel,letterALabel,letterBLabel, letterCLabel, letterDLabel, letterALabelPic,letterBLabelPic, letterCLabelPic, letterDLabelPic
 History,Who was the US president during the US Civil War?,b,Donald Trump,Abraham Lincoln,Mickey Mouse,J Edgar Hoover,false,false,false,false
 History,Which of these is Cardiff Castle?,a,/Users/will/Pictures/MSCQuiz/1.jpg,/Users/will/Pictures/MSCQuiz/2.jpg,/Users/will/Pictures/MSCQuiz/3.jpg,/Users/will/Pictures/MSCQuiz/4.jpg,true,true,true,true
-Science,Test,b,/Users/will/Pictures/2.png,LK,KJ,dfdf,true,false,false,false
+History,Which of these is not the Name of an Ancient Egyptian god?,c,Geb,Shu,Bud,Nut,false,false,false,false
+History,In which year was the Great Fire of London?,a,1666,1777,1686,1787,false,false,false,false
+History,In which country was barbed wire invented?,b,Great Britain,USA,Australia,Switzerland,false,false,false,false
+History,How many words did Shakespeare invent that are still commonly used today?,c,17,170,1700,17000,false,false,false,false
+History,Who is the only President to serve more than two terms? ,a,Franklin Roosevelt,Ronald Regan,Abraham Lincoln,William Harrison,false,false,false,false
+History,In what year did WW1 begin?,b,1910,1914,1912,1916,false,false,false,false
+History,The Magna Carta was published by the King of which country?,c,Spain,France,England,Italy,false,false,false,false
+Science,How many protons does a Hydrogen atom have?,a,1,2,3,4,false,false,false,false
+Science,How many elements are there in the periodic table?,c,106,153,118,112,false,false,false,false
+Science,What is the closest planet to the Sun?,a,Mercury,Saturn,Venus,Earth,false,false,false,false
+Science,What is another name for an object in Space with an icy core and a tail of gas,d,Asteroid,Moon,Star,Comet,false,false,false,false
+Science,Tides are caused by gravitational attraction from... ,c,The Moon,The Sun,The Sun and Moon,Asteroids,false,false,false,false
+Science,What is the speed of light? ,a,3x10^8 m/s,3x10^8 mm/s,3x10^8 cm/s,3x10^8 m/ms,false,false,false,false
+Science,Who was the first person on the Moon?,d,Yuri Gagarin,Buzz Aldrin,Michael Collins,Neil Armstrong,false,false,false,false
+Science,What percentage of the Earth is covered by water?,b,40%,71%,56%,67%,false,false,false,false
+Science,What is the chemical symbol for Silver?,a,Ag,Si,Au,Sv,false,false,false,false
+Science,How many gas giants are there in our solar system?,c,2,6,4,1,false,false,false,false
+Science,What is the surface temperature of the sun?,a,15 million degrees Celsius,10 million degrees Celsius,100 million degrees Celsius,1 million degrees Celsius,false,false,false,false
+Science,Which is the largest organ in the body?,d,Liver,Brain,Large intestine,Skin,false,false,false,false
+Science,How many species of bettle are there in the world?,d,350,3500,35000,350000,false,false,false,false
+Science,From what tree is the drug Aspirin extracted?,a,Willow,Oak,Sycamore,Pine,false,false,false,false
+Pictures,Which of these is a white rhino?,a,/Users/will/Pictures/MSCQuiz/5.jpg,/Users/will/Pictures/MSCQuiz/7.jpeg,/Users/will/Pictures/MSCQuiz/6.jpeg,/Users/will/Pictures/MSCQuiz/8.jpg,true,true,true,true
+Pictures,Which of these is Cardiff Castle?,a,/Users/will/Pictures/MSCQuiz/1.jpg,/Users/will/Pictures/MSCQuiz/2.jpg,/Users/will/Pictures/MSCQuiz/3.jpg,/Users/will/Pictures/MSCQuiz/4.jpg,true,true,true,true
+Science,Which of these is a white rhino?,b,/Users/will/Pictures/MSCQuiz/6.jpeg,/Users/will/Pictures/MSCQuiz/5.jpg,/Users/will/Pictures/MSCQuiz/7.jpeg,/Users/will/Pictures/MSCQuiz/8.jpg,true,true,true,true
